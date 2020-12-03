@@ -1,21 +1,26 @@
-<h1>Burgers!</h1>
+<div class="burger image text-center">
+          <img src="https://img.pngio.com/burger-png-images-transparent-free-download-pngmartcom-cheeseburger-transparent-background-512_512.png" width="300" height="300" alt="burger image">
+      </div>
+    <div class="jumbotron text-center" >
+        <h1 class="display-1">Eat Da Burger!</h1>
+      </div>
 
-<h2>Burgers that are not sleepy!</h2>
+<h2>Burgers that are not eaten</h2>
 
 <ul>
   {{#each burgers}}
-    {{#unless sleepy}}
-      {{> burgers/burger-block sleep=true}}
+    {{#unless eaten}}
+      {{> burgers/burger-block eat=true}}
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Burgers that are sleepy!</h2>
+<h2>Burgers that are eaten</h2>
 
 <ul>
   {{#each burgers}}
-    {{#if sleepy}}
-      {{> burgers/burger-block sleep=false}}
+    {{#if eaten}}
+      {{> burgers/burger-block eat=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -29,9 +34,9 @@
   </div>
 
   <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+    <label for="eaten">Eaten?</label><br>
+    <input type="radio" name="eaten" value="1" checked> Eaten!<br>
+    <input type="radio" name="eaten" value="0"> Not Eaten
   </div>
 
   <button type="submit">Add Burger</button>
